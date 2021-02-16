@@ -22,15 +22,11 @@ steps:
     repository: 'dockerdemo'
     command: 'build'
     Dockerfile: '**/Dockerfile'
-    tags: |
-      tag1
-      tag2
+    tags: $(Build.BuildId)
 
 - task: Docker@2
   inputs:
     containerRegistry: 'wsalgadol / dockerdemo'
     repository: 'dockerdemo'
     command: 'push'
-    tags: |
-      tag1
-      tag2
+    tags: $(Build.BuildId)
