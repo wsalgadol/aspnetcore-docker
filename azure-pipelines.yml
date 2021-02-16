@@ -22,5 +22,5 @@ steps:
     repository: 'wsalgadol/dockerdemo'
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
-    tags: 'v2.$(Build.BuildId)'
+    tags: 'v$(Build.BuildId)'
 
