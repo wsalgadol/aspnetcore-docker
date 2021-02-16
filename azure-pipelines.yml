@@ -22,7 +22,6 @@ steps:
       repository: 'dockerdemo'
       command: 'buildAndPush'
       Dockerfile: '**/Dockerfile'
-      tags: $(Build.BuildId) 
 
 
       
