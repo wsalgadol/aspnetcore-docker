@@ -18,5 +18,15 @@ steps:
 
 - task: Docker@2
   inputs:
-    command: 'buildAndPush'
+    containerRegistry: 'wsalgadol / dockerdemo'
+    repository: 'dockerdemo'
+    command: 'build'
     Dockerfile: '**/Dockerfile'
+    tags: '${{ parameters.tag }}'
+
+- task: Docker@2
+  inputs:
+    containerRegistry: 'wsalgadol / dockerdemo'
+    repository: 'dockerdemo'
+    command: 'push'
+    tags: '${{ parameters.tag }}'
