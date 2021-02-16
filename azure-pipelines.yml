@@ -18,15 +18,11 @@ steps:
 
 - task: Docker@2
   inputs:
-    containerRegistry: 'wsalgadol'
+      containerRegistry: 'wsalgadol / dockerdemo'
       repository: 'dockerdemo'
-      command: 'build'
+      command: 'buildAndPush'
       Dockerfile: '**/Dockerfile'
       tags: $(Build.BuildId) 
 
-  - task: Docker@2
-  inputs:
-    containerRegistry: 'wsalgadol'
-      repository: 'dockerdemo'
-      command: 'push'
-      tags: $(Build.BuildId) 
+
+      
