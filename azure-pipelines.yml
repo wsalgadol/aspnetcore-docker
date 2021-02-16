@@ -18,5 +18,9 @@ steps:
 
 - task: Docker@2
   inputs:
+    containerRegistry: 'Docker'
+    repository: 'dockerdemo'
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
+    tags: 'v2.$(Build.BuildId)'
+
